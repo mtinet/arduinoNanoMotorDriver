@@ -1,6 +1,6 @@
 # arduinoNanoMotorDriver
 
-Link : [arduinoNanoMotorDriver](https://www.ebay.com/itm/L298P-2A-Dual-Channel-DC-Stepper-Motor-Driver-Shield-Module-For-Arduino-Nano-3-0-/201852742335)
+##### Link : [arduinoNanoMotorDriver](https://www.ebay.com/itm/L298P-2A-Dual-Channel-DC-Stepper-Motor-Driver-Shield-Module-For-Arduino-Nano-3-0-/201852742335)
 
 L298P 2A Dual Channel DC Stepper Motor Driver Shield Module For Arduino Nano 3.0  
 ![](https://github.com/mtinet/arduinoNanoMotorDriver/blob/master/image/652099642.jpg?raw=true)  
@@ -45,8 +45,9 @@ PWM               D3                D11
 Brake             D9                D8  
 Current Sensing   A0                A1  
 
-If you don't need the Brake and the Current Sensing and you also need more pins for your application you can disable this features by cutting the respective jumpers on the back side of the shield. 
-[Schematic Download](https://github.com/mtinet/arduinoNanoMotorDriver/blob/master/arduinoNanoMotorDriver.pdf)
+If you don't need the Brake and the Current Sensing and you also need more pins for your application you can disable this features by cutting the respective jumpers on the back side of the shield.  
+
+##### [Schematic Download](https://github.com/mtinet/arduinoNanoMotorDriver/blob/master/arduinoNanoMotorDriver.pdf)
 
 ### Motors Connection  
 Brushed DC motor. You can drive two Brushed DC motors by connecting the two wires of each one in the (+) and (-) screw terminals for each channel A and B. In this way you can control its direction by setting HIGH or LOW the DIR A and DIR B pins, you can control the speed by varying the PWM A and PWM B duty cycle values. The Brake A and Brake B pins, if set HIGH, will effectively brake the DC motors rather than let them slow down by cutting the power. You can measure the current going through the DC motor by reading the SNS0 and SNS1 pins. On each channel will be a voltage proportional to the measured current, which can be read as a normal analog input, through the function analogRead() on the analog input A0 and A1. For your convenience it is calibrated to be 3.3V when the channel is delivering its maximum possible current, that is 2A. 
