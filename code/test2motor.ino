@@ -1,3 +1,4 @@
+// 모터 두 개 제어  
 // connect motor controller pins to Arduino digital pins
 // motor one
 int enA = 3;
