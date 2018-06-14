@@ -11,6 +11,7 @@ void loop() {
   slowRunStop();
 }
 
+//천천히 속도가 올라갔다가 내려가는 것을 반복  
 void slowRunStop() {
   for(int i = 0; i < 256; i++) {
     digitalWrite(in1, HIGH);
