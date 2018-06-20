@@ -38,6 +38,8 @@ void setup() {
 }
 
 void loop() {
+  
+  // 입력신호를 각각의 값으로 분기  
   if(mySerial.available()) {
     if(mySerial.read() == '\n') {
       command = mySerial.parseInt();
@@ -46,8 +48,9 @@ void loop() {
       valMotor = mySerial.parseInt();
     }
   }
-
-  if (command != 1000) {     
+  
+  // 전달되는 값의 시작을 가르쳐주는 수치 '1000'의 자리가 틀릴 경우 자릿수를 보정  
+  if (command != 1000) { 
       temp1 = command;
       command = dir;
       dir = valServo;
@@ -72,7 +75,7 @@ void loop() {
       Serial.print("  ");
       Serial.println(valMotor);
           
-    // dir == 1 forward, dir ==2 backward
+    // forward : dir == 1, backward : dir == 2, stop : dir == 0  
     if (dir == 1) {
       forwardCar(dir, valServo, valMotor);
     }
@@ -86,7 +89,7 @@ void loop() {
 }       
   
 
-
+// 전진함수  
 void forwardCar(int dir, int valServo, int valMotor) {
   myServo.write(valServo);
   digitalWrite(ledRed, HIGH);
@@ -94,6 +97,7 @@ void forwardCar(int dir, int valServo, int valMotor) {
   analogWrite(enA, valMotor);
 }
 
+// 후진함수  
 void backwardCar(int dir, int valServo, int valMotor) {
   myServo.write(valServo);
   digitalWrite(ledRed, HIGH);
@@ -101,6 +105,7 @@ void backwardCar(int dir, int valServo, int valMotor) {
   analogWrite(enA, valMotor);
 }
 
+//정지함수  
 void stopCar(int valServo) {
   myServo.write(valServo);
   digitalWrite(ledRed, LOW);
@@ -109,4 +114,5 @@ void stopCar(int valServo) {
   digitalWrite(in2, LOW);
   analogWrite(enA, 0);
 }
+  
   
