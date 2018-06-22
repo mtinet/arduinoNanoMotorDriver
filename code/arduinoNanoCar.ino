@@ -7,7 +7,7 @@ int enA = 3;
 int in1 = 12; 
 int in2 = 9; //brake
 int ledRed = 13;
-int ledBlue = 7;  
+int ledBlue = 10;  
 
 Servo myServo;
 int command = 0;
@@ -17,7 +17,7 @@ int valMotor = 0;
 
 int temp1 = 0;
 
-SoftwareSerial mySerial(6, 5);
+SoftwareSerial mySerial(6, 7);
 
 void setup() {
   // set all the motor control pins to outputs
@@ -26,6 +26,7 @@ void setup() {
   pinMode(in2, OUTPUT);
   
   pinMode(ledRed, OUTPUT);
+  pinMode(ledBlue, OUTPUT);
   
   myServo.attach(5);
   myServo.write(valServo);
@@ -105,7 +106,8 @@ void modifyAndInput() {
 // 전진함수  
 void forwardCar(int dir, int valServo, int valMotor) {
   myServo.write(valServo);
-  digitalWrite(ledRed, HIGH);
+  digitalWrite(ledBlue, HIGH);
+  digitalWrite(ledRed, LOW);
   digitalWrite(in1, HIGH);
   analogWrite(enA, valMotor);
 }
@@ -113,6 +115,7 @@ void forwardCar(int dir, int valServo, int valMotor) {
 // 후진함수  
 void backwardCar(int dir, int valServo, int valMotor) {
   myServo.write(valServo);
+  digitalWrite(ledBlue, LOW);
   digitalWrite(ledRed, HIGH);
   digitalWrite(in1, LOW);
   analogWrite(enA, valMotor);
