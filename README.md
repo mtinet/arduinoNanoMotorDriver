@@ -1,4 +1,4 @@
-# arduinoNanoMotorDriverCar
+# arduinoNanoMotorDriver
 
 ##### Link : [arduinoNanoMotorDriver](https://www.ebay.com/itm/L298P-2A-Dual-Channel-DC-Stepper-Motor-Driver-Shield-Module-For-Arduino-Nano-3-0-/201852742335)
 
